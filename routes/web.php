@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DomaineController;
+use App\Http\Controllers\SauvegardeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,7 @@ Route::get('wordpress', [DomaineController::class, 'index'])
 Route::post('wordpress', [DomaineController::class, 'store'])
     ->middleware('auth');
 
-Route::get('wordpress/{domaine:slug}', [DomaineController::class, 'show'])
+Route::get('wordpress/{domaine:slug}', [SauvegardeController::class, 'index'])
     ->middleware('auth');
 
 require __DIR__.'/auth.php';

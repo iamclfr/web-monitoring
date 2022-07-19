@@ -18,15 +18,6 @@ class DomaineController extends Controller
         ]);
     }
 
-    public function show(Domaine $domaine)
-    {
-        return view('wordpress.show', [
-            'domaine' => $domaine,
-            'sauvegardes' => Sauvegarde::all()
-                ->where('id_domaine', '==', $domaine->id)
-                ->sortBy('created_at')
-        ]);
-    }
     public function store()
     {
         $attributes = request()->validate([
