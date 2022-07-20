@@ -61,7 +61,7 @@
                                         </a>
                                     </td>
                                     <td class="px-6 py-4 text-right">
-                                        <a href="#" class="font-medium text-gray-700 dark:text-blue-500 hover:underline">Modifier</a>
+                                        <a href="/wordpress/{{ $domaine->slug }}/edit" class="font-medium text-gray-700 dark:text-blue-500 hover:underline">Modifier</a>
                                     </td>
                                 </tr>
                             @endforeach

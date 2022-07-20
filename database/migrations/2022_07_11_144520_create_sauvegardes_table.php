@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('version');
             $table->string('poids');
             $table->string('etat_sante');
-            $table->longText('commentaire');
+            $table->longText('commentaire')->nullable(true);
             $table->string('backup');
             $table->timestamps();
         });

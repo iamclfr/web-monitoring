@@ -26,7 +26,15 @@ Route::get('wordpress', [DomaineController::class, 'index'])
 Route::post('wordpress', [DomaineController::class, 'store'])
     ->middleware('auth');
 
+Route::get('wordpress/{domaine:slug}/edit', [DomaineController::class, 'edit'])
+    ->middleware('auth');
+
+Route::patch('wordpress/{domaine:slug}', [DomaineController::class, 'update'])
+    ->middleware('auth');
+
 Route::get('wordpress/{domaine:slug}', [SauvegardeController::class, 'index'])
     ->middleware('auth');
 
+Route::post('wordpress/{domaine:slug}', [SauvegardeController::class, 'store'])
+    ->middleware('auth');
 require __DIR__.'/auth.php';

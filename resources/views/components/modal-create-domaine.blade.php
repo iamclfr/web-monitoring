@@ -34,6 +34,7 @@
                             <option value="SyS-52">SyS-52</option>
                             <option value="SyS-54">SyS-54</option>
                             <option value="Client">Client</option>
+                            <option value="Dédié">Dédié</option>
                         </x-select>
                     </div>
                     <div>

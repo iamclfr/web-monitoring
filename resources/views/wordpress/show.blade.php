@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $domaine->domaine }}
+            {{ __('Sauvegardes de ') }}{{ $domaine->domaine }}
         </h2>
     </x-slot>
 
@@ -108,5 +108,5 @@
         </div>
     </div>
 
-    <x-modal-create-backup></x-modal-create-backup>
+    <x-modal-create-backup :domaineSlug="$domaine->slug" :domaineId="$domaine->id" />
 </x-app-layout>

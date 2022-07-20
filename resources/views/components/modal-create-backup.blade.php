@@ -1,3 +1,4 @@
+@props(['domaineSlug', 'domaineId'])
 <!-- Main modal -->
 <div id="modal-creation-domaine" tabindex="-1" aria-hidden="true" class=" hidden fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full backdrop-blur-sm overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
     <div class="relative w-full h-full max-w-md p-4 md:h-auto">
@@ -8,9 +9,9 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Ajouter une Sauvegarde</h3>
-                <form class="space-y-6" method="POST" action="/wordpress" enctype="multipart/form-data">
+                <form class="space-y-6" method="POST" action="/wordpress/{{ $domaineSlug }}" enctype="multipart/form-data">
                     @csrf
-
+                    <input type="number" name="id_domaine" class="hidden" readonly required value="{{$domaineId}}">
                     <div>
                         <x-label for="version" :value="__('Version')" />
                         <x-input id="version" class="block mt-1 w-full lowercase" type="text" name="version" :value="old('version')" required autofocus />
@@ -26,7 +27,7 @@
                     </div>
                     <div>
                         <x-label for="poids" :value="__('Poids de la Sauvegarde')" />
-                        <x-input id="poids" class="block mt-1 w-full lowercase" type="text" name="poids" :value="old('poids')" required autofocus />
+                        <x-input id="poids" class="block mt-1 w-full" type="text" name="poids" :value="old('poids')" required autofocus />
                     </div>
                     <div>
                         <x-label for="backup" :value="__('Lien vers la Sauvegarde (Google Drive, DropBox ...)')" />

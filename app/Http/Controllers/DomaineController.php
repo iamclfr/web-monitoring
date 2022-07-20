@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Domaine;
-use App\Models\Sauvegarde;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class DomaineController extends Controller
@@ -32,6 +30,30 @@ class DomaineController extends Controller
 
         Domaine::create($attributes);
 
-        return redirect('/wordpress')->with('success', 'Domaine ajouté !');
+        return back()->with('success', 'Domaine ajouté !');
+    }
+
+    public function edit(Domaine $domaine)
+    {
+        return view('wordpress.edit', [
+            'domaine' => $domaine
+        ]);
+    }
+
+    public function update(Domaine $domaine)
+    {
+        $attributes = request()->validate([
+            'type_site' =>  'required',
+            'serveur'   =>  'required',
+            'php_version'   =>  'required',
+            'backoffice'    =>  'required'
+        ]);
+
+        $attributes['domaine'] = Str::lower(request()->domaine);
+        $attributes['slug'] = Str::slug(request()->domaine, '-');
+
+        $domaine->update($attributes);
+
+        return redirect('/wordpress')->with('success', 'Domaine Mis à Jour !');
     }
 }
