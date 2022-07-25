@@ -11,7 +11,7 @@
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Ajouter une Sauvegarde</h3>
                 <form class="space-y-6" method="POST" action="/wordpress/{{ $domaineSlug }}" enctype="multipart/form-data">
                     @csrf
-                    <input type="number" name="id_domaine" class="hidden" readonly required value="{{$domaineId}}">
+                    <input type="number" name="domaine_id" class="hidden" readonly required value="{{$domaineId}}">
                     <div>
                         <x-label for="version" :value="__('Version')" />
                         <x-input id="version" class="block mt-1 w-full lowercase" type="text" name="version" :value="old('version')" required autofocus />

@@ -7,7 +7,16 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex justify-end items-center flex-wrap mb-4">
+            <div class="flex justify-between items-center flex-wrap mb-4">
+                <div>
+                    <label for="domain-search" class="sr-only">Search</label>
+                    <div class="relative mt-1">
+                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <input type="text" id="domain-search" @if ($domaines->count() <= 1) disabled @endif class="pl-10 py-2.5 text-sm rounded-lg shadow-sm border-0 bg-white hover:bg-gray-50 focus:outline-none focus:ring-0 " placeholder="Rechercher un Domaine">
+                    </div>
+                </div>
                 <button type="button" id="btn-open-domain-modal" class="text-gray-700 bg-white hover:bg-gray-50 focus:outline-none font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                     Ajouter un Domaine
                     <svg class="w-5 h-5 ml-2 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>
@@ -17,7 +26,7 @@
                 <div class="bg-white border-b border-gray-200">
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         @if ($domaines->count())
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <table id="domain-table" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
@@ -43,7 +52,7 @@
                             <tbody>
                             @foreach($domaines as $domaine)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <th onclick="location.href='wordpress/{{ $domaine->slug }}'" scope="row" class="px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap cursor-pointer">
+                                    <th onclick="location.href='wordpress/{{ $domaine->slug }}'" scope="row" class="uppercase px-6 py-4 font-bold text-gray-900 dark:text-white whitespace-nowrap cursor-pointer">
                                         {{ $domaine->domaine }}
                                     </th>
                                     <td onclick="location.href='wordpress/{{ $domaine->slug }}'" class="px-6 py-4 cursor-pointer text-center">

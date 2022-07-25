@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sauvegardes', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
-            $table->integer('id_domaine');
+            $table->foreignId('domaine_id')->constrained()->cascadeOnDelete();
             $table->string('version');
             $table->string('poids');
             $table->string('etat_sante');

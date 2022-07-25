@@ -10,4 +10,9 @@ class Sauvegarde extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function domaines()
+    {
+        return $this->belongsTo(Domaine::class);
+    }
 }

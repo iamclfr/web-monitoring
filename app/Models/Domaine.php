@@ -10,4 +10,9 @@ class Domaine extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function sauvegardes()
+    {
+        return $this->hasMany(Sauvegarde::class);
+    }
 }

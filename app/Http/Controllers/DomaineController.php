@@ -35,7 +35,7 @@ class DomaineController extends Controller
 
     public function edit(Domaine $domaine)
     {
-        return view('wordpress.edit', [
+        return view('wordpress.edit-domaine', [
             'domaine' => $domaine
         ]);
     }
@@ -55,5 +55,11 @@ class DomaineController extends Controller
         $domaine->update($attributes);
 
         return redirect('/wordpress')->with('success', 'Domaine Mis à Jour !');
+    }
+
+    public function destroy(Domaine $domaine)
+    {
+        $domaine->delete();
+        return redirect('/')->with('success', 'Domaine Supprimé !');
     }
 }

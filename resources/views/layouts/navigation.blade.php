@@ -37,8 +37,11 @@
                             </div>
                         </button>
                     </x-slot>
-
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('admin')">
+                            {{ __('Administration') }}
+                        </x-dropdown-link>
+                        <hr>
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
