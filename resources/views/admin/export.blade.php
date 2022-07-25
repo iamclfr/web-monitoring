@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Importer des Domaines') }}
+            {{ __('Exporter les Domaines') }}
         </h2>
     </x-slot>
 
@@ -13,10 +13,10 @@
                         <a href="{{ route('admin') }}" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Statistiques</a>
                     </li>
                     <li class="mr-2">
-                        <a href="/admin/import" class="inline-block p-4 text-gray-800 rounded-t-lg border-b-2 border-indigo-400 dark:text-blue-500 dark:border-blue-500" aria-current="page">Importer des Domaines</a>
+                        <a href="/admin/import" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" aria-current="page">Importer des Domaines</a>
                     </li>
                     <li class="mr-2">
-                        <a href="/admin/export" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" aria-current="page">Exporter les Domaines</a>
+                        <a href="/admin/export" class="inline-block p-4 text-gray-800 rounded-t-lg border-b-2 border-indigo-400 dark:text-blue-500 dark:border-blue-500" aria-current="page">Exporter les Domaines</a>
                     </li>
                     <li class="mr-2">
                         <a href="#" class="inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500" title="En Développement">Supprimer des Domaines <sup class="text-yellow-500 font-bold">(dev)</sup></a>
@@ -25,18 +25,12 @@
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex justify-center flex-wrap p-6 bg-white border-b border-gray-200">
-                    <form class="p-6" method="POST" action="/admin/import" enctype="multipart/form-data">
-                    @csrf
-
-                        <div>
-                            <x-label for="file" :value="__('Importer des Domaines (.csv / .sheet / .xls)')" />
-                            <x-input id="file" class="block mt-1 w-full p-1" type="file" name="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  required autofocus />
-                        </div>
-                        <div class="flex justify-end mt-4">
+                    <p class="text-md text-center w-full">Vous allez exporter <span class="font-bold bg-gray-800 text-white p-1 rounded-lg">{{ $domainesTotal }}</span> Domaines</p>
+                    <form class="mt-4" method="GET" action="/admin/export/download" enctype="multipart/form-data">
+                        @csrf
                             <x-button>
-                                {{ __('Importer les Domaines') }}
+                                {{ __('Exporter les Domaines') }}
                             </x-button>
-                        </div>
                         <!-- Session Status -->
                         <x-auth-session-status class="mb-4" :status="session('status')" />
 

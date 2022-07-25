@@ -67,4 +67,13 @@ Route::get('admin', [AdminController::class, 'index'])
 Route::get('admin/import', [AdminController::class, 'import'])
     ->middleware('auth');
 
+Route::post('admin/import', [AdminController::class, 'store'])
+    ->middleware('auth');
+
+Route::get('admin/export', [AdminController::class, 'export'])
+    ->middleware('auth');
+
+Route::get('admin/export/download', [AdminController::class, 'download'])
+    ->middleware('auth');
+
 require __DIR__.'/auth.php';

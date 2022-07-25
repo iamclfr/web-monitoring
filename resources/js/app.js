@@ -60,4 +60,24 @@ if (document.querySelector('#domain-search')) {
             }
         }
     })
+
+    // Scroll To Top Btn
+    if (document.querySelector('#scrolltotop')) {
+        window.onscroll = function (e) {
+            if (window.scrollY > 200) {
+                document.querySelector('#scrolltotop').classList.remove('hidden')
+                document.querySelector('#scrolltotop').classList.add('visible')
+            } else {
+                document.querySelector('#scrolltotop').classList.remove('visible')
+                document.querySelector('#scrolltotop').classList.add('hidden')
+            }
+        }
+
+        document.querySelector('#scrolltotop').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        })
+    }
 }

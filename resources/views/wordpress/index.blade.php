@@ -92,4 +92,5 @@
     </div>
 
     <x-modal-create-domaine />
+    <x-scroll-top />
 </x-app-layout>

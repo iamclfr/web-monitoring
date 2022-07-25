@@ -12,7 +12,7 @@ class DomaineController extends Controller
         return view('wordpress.index', [
             'domaines' => Domaine::all()
                 ->where('type_site', '==', 'WordPress')
-                ->sortBy('domaine')
+                ->sortBy('slug')
         ]);
     }
 

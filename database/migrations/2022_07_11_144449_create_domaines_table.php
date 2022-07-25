@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('domaines', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('domaine');
             $table->string('type_site');
             $table->string('serveur');

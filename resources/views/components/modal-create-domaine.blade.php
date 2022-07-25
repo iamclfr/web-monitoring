@@ -45,7 +45,8 @@
                         <x-label for="backoffice" :value="__('BackOffice')" />
                         <x-input id="backoffice" class="block mt-1 w-full" type="url" name="backoffice" :value="old('backoffice')" required />
                     </div>
-                    <div class="flex justify-end">
+                    <div class="flex justify-between items-center">
+                        <a href="admin/import" class="text-sm">Importer plusieurs Domaines ?</a>
                         <x-button class="">
                             {{ __('Ajouter') }}
                         </x-button>
