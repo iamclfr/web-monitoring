@@ -29,7 +29,7 @@ if (document.querySelector('#btn-modal-close')) {
 
 if (document.querySelector('#delete-button')) {
     document.querySelector('#delete-button').addEventListener('click', function (e) {
-        if(confirm('Êtes-vous sur de vouloir supprimer ce domaine ?')) {
+        if(confirm('Êtes-vous sur de vouloir supprimer ce(s) domaine(s) ?')) {
         } else {
             e.preventDefault()
         }

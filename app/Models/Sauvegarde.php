@@ -13,6 +13,6 @@ class Sauvegarde extends Model
 
     public function domaines()
     {
-        return $this->belongsTo(Domaine::class);
+        return $this->belongsTo(Domaine::class, 'domaine_id');
     }
 }

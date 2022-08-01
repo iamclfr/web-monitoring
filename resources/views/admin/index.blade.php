@@ -19,7 +19,7 @@
                         <a href="admin/export" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" aria-current="page">Exporter les Domaines</a>
                     </li>
                     <li class="mr-2">
-                        <a href="#" class="inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500" title="En Développement">Supprimer des Domaines <sup class="text-yellow-500 font-bold">(dev)</sup></a>
+                        <a href="/admin/delete" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Supprimer des Domaines</a>
                     </li>
                 </ul>
             </div>
@@ -28,13 +28,13 @@
                     <div class="relative w-72 overflow-x-auto shadow-md sm:rounded-lg">
                         <div class="flex justify-center items-center flex-wrap p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                             <h5 class="mb-2 w-full text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Nombre de Domaines</h5>
-                            <p class="font-normal text-center text-3xl text-gray-700 dark:text-gray-400">{{ $domaines->count() }}</p>
+                            <p class="font-normal text-center text-3xl text-gray-700 dark:text-gray-400">{{ $domaines_total }}</p>
                         </div>
                     </div>
                     <div class="relative w-72 overflow-x-auto shadow-md sm:rounded-lg">
                         <div class="flex justify-center items-center flex-wrap p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                             <h5 class="mb-2 w-full text-xl text-center font-bold tracking-tight text-gray-900 dark:text-white">Nombre de Sauvegardes</h5>
-                            <p class="font-normal text-center text-3xl text-gray-700 dark:text-gray-400">{{ $sauvegardes->count() }}</p>
+                            <p class="font-normal text-center text-3xl text-gray-700 dark:text-gray-400">{{ $sauvegardes_total }}</p>
                         </div>
                     </div>
                     <div class="relative w-72 overflow-x-auto shadow-md sm:rounded-lg">

@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard', [AdminController::class, 'index']);
 })->middleware(['auth'])->name('dashboard');
 
 /*
@@ -74,6 +74,12 @@ Route::get('admin/export', [AdminController::class, 'export'])
     ->middleware('auth');
 
 Route::get('admin/export/download', [AdminController::class, 'download'])
+    ->middleware('auth');
+
+Route::get('admin/delete', [AdminController::class, 'delete'])
+    ->middleware('auth');
+
+Route::delete('admin/delete', [AdminController::class, 'destroy'])
     ->middleware('auth');
 
 require __DIR__.'/auth.php';

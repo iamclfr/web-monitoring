@@ -18,8 +18,8 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Clément Lafargue',
-            'email' => 'lafargue@bmvcom.eu',
+            'name' => 'BMV Communication',
+            'email' => 'web@bmvcom.eu',
             'email_verified_at' => now(),
             'password' => '$2y$10$nJbFpUz.5LYQxZY1DD8KBO/CEfuMu1fC6MNsEb1k9rAOlbX0CzrcG', // !Password
             'remember_token' => Str::random(10),

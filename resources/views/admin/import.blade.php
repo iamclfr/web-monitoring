@@ -19,7 +19,7 @@
                         <a href="/admin/export" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" aria-current="page">Exporter les Domaines</a>
                     </li>
                     <li class="mr-2">
-                        <a href="#" class="inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500" title="En Développement">Supprimer des Domaines <sup class="text-yellow-500 font-bold">(dev)</sup></a>
+                        <a href="/admin/delete" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Supprimer des Domaines</a>
                     </li>
                 </ul>
             </div>

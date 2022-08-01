@@ -31,7 +31,7 @@
                     </div>
                     <div>
                         <x-label for="backup" :value="__('Lien vers la Sauvegarde (Google Drive, DropBox ...)')" />
-                        <x-input id="backup" class="block mt-1 w-full" type="url" name="backup" :value="old('backup')" required />
+                        <x-input id="backup" class="block mt-1 w-full" type="text" name="backup" :value="old('backup')" required />
                     </div>
                     <div>
                         <x-label for="commentaire" :value="__('Commentaire')" />
